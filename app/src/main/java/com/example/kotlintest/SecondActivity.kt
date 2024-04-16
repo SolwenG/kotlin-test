@@ -1,42 +1,45 @@
 package com.example.kotlintest
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.second_activity)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.second_activity)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val button = findViewById<Button>(R.id.second_activity)
-        val nom1 = findViewById<EditText>(R.id.nom)
-        val profession1 = findViewById<EditText>(R.id.profession)
-        val societe1 = findViewById<EditText>(R.id.societe)
+        val extras :  Bundle? = intent.extras
+        val nom = extras?.getString("nom")
+        val profession =  extras?.getString("profession")
+        val societe =  extras?.getString("societe")
 
+        val form = findViewById<TextView>(R.id.form)
+        form.text = "Nom : $nom \n Profession : $profession \n Société : $societe"
+
+        val button = findViewById<Button>(R.id.third_activity)
         button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            val nom = nom1.text.toString()
-            val profession = profession1.text.toString()
-            val societe = societe1.text.toString()
+            val intent = Intent(this, ThirdActivity::class.java)
             intent.putExtra("nom", nom)
             intent.putExtra("profession", profession)
             intent.putExtra("societe", societe)
             startActivity(intent)
         }
-
-
     }
 }

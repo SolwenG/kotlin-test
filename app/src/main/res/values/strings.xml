@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KotlinTest</string>
+    <string name="nom">Nom</string>
+    <string name="profession">Profession</string>
+    <string name="societe">Société</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="confirmer">Confirmer</string>
 </resources>

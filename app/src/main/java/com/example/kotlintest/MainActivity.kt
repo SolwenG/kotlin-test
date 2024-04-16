@@ -22,21 +22,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         val button = findViewById<Button>(R.id.second_activity)
-        val nom1 = findViewById<EditText>(R.id.nom)
-        val profession1 = findViewById<EditText>(R.id.profession)
-        val societe1 = findViewById<EditText>(R.id.societe)
+        val getName = findViewById<EditText>(R.id.name)
+        val getProfession = findViewById<EditText>(R.id.profession)
+        val getSociety = findViewById<EditText>(R.id.society)
 
         button.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
-            val nom = nom1.text.toString()
-            val profession = profession1.text.toString()
-            val societe = societe1.text.toString()
-            intent.putExtra("nom", nom)
+            val name = getName.text.toString()
+            val profession = getProfession.text.toString()
+            val society = getSociety.text.toString()
+
+            intent.putExtra("name", name)
             intent.putExtra("profession", profession)
-            intent.putExtra("societe", societe)
+            intent.putExtra("society", society)
             startActivity(intent)
         }
-
-
     }
 }

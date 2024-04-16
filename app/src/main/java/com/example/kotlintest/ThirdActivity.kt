@@ -22,10 +22,11 @@ class ThirdActivity : AppCompatActivity() {
         }
 
         val extras :  Bundle? = intent.extras
-        val nom = extras?.getString("nom")
+        val name = extras?.getString("name")
         val profession =  extras?.getString("profession")
-        val societe =  extras?.getString("societe")
-        val form = findViewById<TextView>(R.id.form2)
-        form.text = "Nom : $nom \n \n Profession : $profession \n \n Société : $societe"
+        val society =  extras?.getString("society")
+
+        val form = findViewById<TextView>(R.id.form)
+        form.text = "Nom : $name \n \n Profession : $profession \n \n Société : $society"
     }
 }

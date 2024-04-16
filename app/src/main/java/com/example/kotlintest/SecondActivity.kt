@@ -26,19 +26,19 @@ class SecondActivity : AppCompatActivity() {
         }
 
         val extras :  Bundle? = intent.extras
-        val nom = extras?.getString("nom")
+        val name = extras?.getString("name")
         val profession =  extras?.getString("profession")
-        val societe =  extras?.getString("societe")
+        val society =  extras?.getString("society")
 
         val form = findViewById<TextView>(R.id.form)
-        form.text = "Nom : $nom \n Profession : $profession \n Société : $societe"
+        form.text = "Nom : $name \n \n Profession : $profession \n \n Société : $society"
 
         val button = findViewById<Button>(R.id.third_activity)
         button.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
-            intent.putExtra("nom", nom)
+            intent.putExtra("name", name)
             intent.putExtra("profession", profession)
-            intent.putExtra("societe", societe)
+            intent.putExtra("society", society)
             startActivity(intent)
         }
     }

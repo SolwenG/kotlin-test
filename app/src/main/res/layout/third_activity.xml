@@ -10,12 +10,15 @@
     tools:context=".ThirdActivity">
 
     <TextView
-        android:id="@+id/form2"
+        android:id="@+id/form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAllCaps="true"
+        android:textAlignment="center"
+        android:padding="15dp"
+        android:background="@drawable/border"
         android:textColor="@color/white" />
 
 </LinearLayout>

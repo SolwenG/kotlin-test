@@ -5,4 +5,6 @@
     <string name="societe">Société</string>
     <string name="envoyer">Envoyer</string>
     <string name="confirmer">Confirmer</string>
+    <string name="recap">Récap de vos informations</string>
+    <string name="consigne">Entrez vos informations :</string>
 </resources>
